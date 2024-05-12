@@ -36,8 +36,6 @@ public class Task {
     @Column(name = "DifficultyRate")
     private Integer difficultyRate;
 
-
-
     @Column(name = "IsRepeatable")
     private Boolean isRepeatable;
 
@@ -48,68 +46,68 @@ public class Task {
         return taskID;
     }
 
-    public Integer getUserID() {
-        return userID;
-    }
-
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public String getTaskDescription() {
-        return taskDescription;
-    }
-
-    public Date getDeadline() {
-        return deadline;
-    }
-
-    public Integer getPriority() {
-        return priority;
-    }
-
-    public Integer getDifficultyRate() {
-        return difficultyRate;
-    }
-
-    public Boolean getRepeatable() {
-        return isRepeatable;
-    }
-
-    public Boolean getCompleted() {
-        return isCompleted;
-    }
-
     public void setTaskID(Integer taskID) {
         this.taskID = taskID;
+    }
+
+    public Integer getUserID() {
+        return userID;
     }
 
     public void setUserID(Integer userID) {
         this.userID = userID;
     }
 
+    public String getTaskName() {
+        return taskName;
+    }
+
     public void setTaskName(String taskName) {
         this.taskName = taskName;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
     }
 
     public void setTaskDescription(String taskDescription) {
         this.taskDescription = taskDescription;
     }
 
+    public Date getDeadline() {
+        return deadline;
+    }
+
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
+    }
+
+    public Integer getPriority() {
+        return priority;
     }
 
     public void setPriority(Integer priority) {
         this.priority = priority;
     }
 
+    public Integer getDifficultyRate() {
+        return difficultyRate;
+    }
+
     public void setDifficultyRate(Integer difficultyRate) {
         this.difficultyRate = difficultyRate;
     }
 
+    public Boolean getRepeatable() {
+        return isRepeatable;
+    }
+
     public void setRepeatable(Boolean repeatable) {
         isRepeatable = repeatable;
+    }
+
+    public Boolean getCompleted() {
+        return isCompleted;
     }
 
     public void setCompleted(Boolean completed) {
