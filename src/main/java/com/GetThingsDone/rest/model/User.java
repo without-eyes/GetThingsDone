@@ -25,35 +25,6 @@ public class User {
     @Column(name = "Password")
     private String password;
 
-    public Integer getUserID() {
-        return userID;
-    }
-
-    public void setUserID(Integer userID) {
-        this.userID = userID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getLogin() {
-        return login;
-    }
-
-    public void setLogin(Integer login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    @Column(name = "Experience")
+    private Integer experience;
 }

@@ -18,6 +18,16 @@ public class TaskController {
         return taskService.getAllTasks();
     }
 
+    @GetMapping(path = "/completed")
+    public List<Task> getCompletedTasks() {
+        return taskService.getCompletedTasks();
+    }
+
+    @GetMapping(path = "/uncompleted")
+    public List<Task> getUnompletedTasks() {
+        return taskService.getCompletedTasks();
+    }
+
     @GetMapping(path = "/{id}")
     public Task getTaskById(@PathVariable int id) {
         return taskService.getTaskById(id);

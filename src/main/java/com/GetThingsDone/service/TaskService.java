@@ -20,6 +20,14 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
+    public List<Task> getCompletedTasks() {
+        return taskRepository.findByIsCompleted(true);
+    }
+
+    public List<Task> getUncompletedTasks() {
+        return taskRepository.findByIsCompleted(false);
+    }
+
     public Task getTaskById(int id) {
         return taskRepository.findById(id).orElse(null);
     }
