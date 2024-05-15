@@ -25,7 +25,7 @@ public class TaskTemplateService {
     }
 
     public TaskTemplate updateTaskTemplate(TaskTemplate taskTemplate) {
-        TaskTemplate updatedTaskTemplate = taskTemplateRepository.findById(taskTemplate.getTaskID()).orElse(null);
+        TaskTemplate updatedTaskTemplate = taskTemplateRepository.findById(taskTemplate.getTaskTemplateID()).orElse(null);
         if (updatedTaskTemplate != null) {
             updatedTaskTemplate.setTaskName(taskTemplate.getTaskName());
             updatedTaskTemplate.setTaskDescription(taskTemplate.getTaskDescription());
@@ -40,7 +40,7 @@ public class TaskTemplateService {
         }
     }
 
-    public void deleteTaskTemplate(TaskTemplate taskTemplate) {
-        taskTemplateRepository.deleteById(taskTemplate.getTaskID());
+    public void deleteTaskTemplateById(Integer id) {
+        taskTemplateRepository.deleteById(id);
     }
 }

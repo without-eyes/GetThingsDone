@@ -13,8 +13,8 @@ public class TaskTemplateController {
     @Autowired
     private TaskTemplateService taskTemplateService;
 
-    @GetMapping(path = "/{id}")
-    public TaskTemplate getTaskTemplate(@PathVariable int id) {
+    @GetMapping(path = "/get/{id}")
+    public TaskTemplate getTaskTemplate(@PathVariable Integer id) {
         return taskTemplateService.getTaskTemplateById(id);
     }
 
@@ -24,17 +24,17 @@ public class TaskTemplateController {
     }
 
     @PostMapping(path = "/create")
-    public TaskTemplate createTaskTemplate(TaskTemplate taskTemplate) {
+    public TaskTemplate createTaskTemplate(@RequestBody TaskTemplate taskTemplate) {
         return taskTemplateService.createTaskTemplate(taskTemplate);
     }
 
     @PutMapping(path = "/update")
-    public TaskTemplate updateTaskTemplate(TaskTemplate taskTemplate) {
+    public TaskTemplate updateTaskTemplate(@RequestBody TaskTemplate taskTemplate) {
         return taskTemplateService.updateTaskTemplate(taskTemplate);
     }
 
-    @DeleteMapping(path = "/delete")
-    public void deleteTaskTemplate(TaskTemplate taskTemplate) {
-        taskTemplateService.deleteTaskTemplate(taskTemplate);
+    @DeleteMapping(path = "/delete/{id}")
+    public void deleteTaskTemplate(@PathVariable Integer id) {
+        taskTemplateService.deleteTaskTemplateById(id);
     }
 }

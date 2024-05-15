@@ -24,12 +24,12 @@ public class TaskController {
     }
 
     @GetMapping(path = "/uncompleted")
-    public List<Task> getUnompletedTasks() {
-        return taskService.getCompletedTasks();
+    public List<Task> getUncompletedTasks() {
+        return taskService.getUncompletedTasks();
     }
 
-    @GetMapping(path = "/{id}")
-    public Task getTaskById(@PathVariable int id) {
+    @GetMapping(path = "/get/{id}")
+    public Task getTaskById(@PathVariable Integer id) {
         return taskService.getTaskById(id);
     }
 
@@ -43,8 +43,8 @@ public class TaskController {
         return taskService.updateTask(task);
     }
 
-    @DeleteMapping(path = "delete")
-    public void deleteTask(@RequestBody Task task) {
-        taskService.deleteTask(task);
+    @DeleteMapping(path = "delete/{id}")
+    public void deleteTask(@PathVariable int id) {
+        taskService.deleteTaskById(id);
     }
 }

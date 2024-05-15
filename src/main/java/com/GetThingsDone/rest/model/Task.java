@@ -1,5 +1,6 @@
 package com.GetThingsDone.rest.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,8 +28,9 @@ public class Task {
     @Column(name = "TaskDescription")
     private String taskDescription;
 
+    @JsonFormat(pattern = "dd-MM-yyyy", shape = JsonFormat.Shape.STRING)
     @Column(name = "Deadline")
-    private Date deadline;
+    private String deadline;
 
     @Column(name = "Priority")
     private Integer priority;
