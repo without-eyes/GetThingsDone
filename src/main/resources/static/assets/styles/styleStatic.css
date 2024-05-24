@@ -1,0 +1,153 @@
+﻿.experience-bar {
+    width: 300px;
+    height: 10px;
+    background-color: #ddd;
+    margin: 20px auto;
+    position: relative;
+}
+
+.experience-fill {
+    height: 100%;
+    background-color: #4caf50;
+}
+.text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+
+}
+.discribe {
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-size:12px;
+}
+.icons_exp {
+    height: 25px;
+    width: 25px;
+    cursor:pointer;
+}
+.exp_name {
+    margin: 10px;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+    font-size: 18px;
+    display: flex;
+    position: relative;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+    justify-content: center;
+}
+.divider {
+    width: 40%;
+    border-top: 2px solid black; 
+    margin-top: 1px;
+    margin-bottom: 5px; 
+}
+.divider_pointer {
+    flex-grow: 1;
+    height: 1px; 
+    background-image: linear-gradient(to right, black 10%, transparent 10%); 
+    background-size: 10px 1px; 
+    margin: 0 5px; 
+}
+.custom-buttonST{
+    margin: 5px;
+    background-color: #F0F0F0;
+    border: 1px solid #CCC;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+    font-size: 15px;
+    height:10px;
+    width: 200px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+}
+.failed_tsk {
+    color: red;
+    position: absolute;
+    left:10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.failed_number {
+    color: red;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.succes_tsk {
+    color: limegreen;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.succes_number {
+    color: limegreen;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.command_tsk {
+    color: dodgerblue;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.command_number {
+    color: dodgerblue;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.container_achiev {
+    position: relative;
+    width: 300px;
+    height: 88px;
+    background-color: aqua;
+    margin: 5px;
+    background-color: #F0F0F0;
+    border: 2px solid #CCC;
+    border-radius: 25px;
+    padding: 10px 20px 10px 40px;
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    color: black;
+
+}
+.container_xp{
+    display:flex;
+    color:limegreen;
+    margin-top:20px;
+}
+#counter {
+    flex: 1;
+    text-align: left;
+    align-items: center;
+}
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+#right-content {
+    flex: 1;
+    text-align: right;
+    align-items: center;
+}

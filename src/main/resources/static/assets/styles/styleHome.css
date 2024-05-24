@@ -1,0 +1,166 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+}
+.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+header {
+    background-color: #E85A64;
+    color: #fff;
+}
+.ava_cont{
+    border: 2px solid black;
+    display: flex;
+    justify-content: end;
+}
+.mail{
+    width: 36px;
+}
+.ava{
+    width: 36px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+.name{
+    display: flex;
+    justify-content: center;
+    background: black;
+}
+.ava_lef{
+    width: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.ava_rig{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap');
+.clock{
+  background: #131419;
+  height: 120px;
+  
+  line-height: 120px;
+  text-align: center;
+  padding: 0 30px;
+  box-shadow: -3px -3px 7px rgba(255,255,255,0.05),
+               3px 3px 5px rgba(0,0,0,0.5);
+}
+.clock .display{
+ 
+  color: cyan;
+  letter-spacing: 5px;
+  font-family: 'Orbitron', sans-serif;
+}
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+footer {
+    background-color: #733f3f;
+    color: #fff;
+    display: flex;
+}
+
+.home{
+    height: 82.6vh;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+}
+.foot_rig{
+width: 50%;
+}
+.foot_lef{
+    width: 50%;
+}
+.foot-plus{
+    padding-right: 10px;
+    width: 17px;
+}
+.but_foot{
+    border: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #733f3f;
+    cursor: pointer;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: end;
+}
+
+.searchTerm {
+ 
+  
+  border-right: none;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 27px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.ser-but{
+    width: 14px
+}
+
+.team{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 17px;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+
+
+.button span {
+    text-align: center;
+    width: 153px;
+    font-size: 18px;
+}
+
+.button img {
+   width: 41px; 
+   height: auto; 
+}
+
+.ex-link {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styleProfile.css">
+    <link rel="stylesheet" href="assets/styles/styleStatic.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="name">Список справ</div>
+    <div class="ava_cont">
+        <div class="ava_lef">
+            
+    <div class="display">
+    </div>
+      
+    </div>
+        <div class="ava_rig">
+            <a href="home.html">
+                <img src="assets/icons/Task-List-PNG-Clipart.png" alt="" class="ava-home">
+            </a>
+            <a href="home.html">
+                <img src="assets/icons/email-and-mail-icon-black-free-png.webp" alt="" class="mail">
+            </a>
+                <a href="Profile.html">
+                    <img src="assets/icons/149071.png" alt="" class="ava">
+             </a>
+        </div>
+    </div>
+    </header>
+    <section class="ex">
+
+        <div class="container">
+            <div class="exp_name">
+                <text class="text">Досвід</text>
+                <a  id="clickButton" class="icons_exp" onclick="gainExperience()">
+                    <img src="assets/icons/trophey.png" alt="" class="icons_exp">
+                </a>
+            </div>
+            <div class="experience-info">
+                <span id="current-experience">0</span> / <span id="max-experience">100</span>
+            </div>
+            <div class="experience-bar">
+                <div class="experience-fill" id="experience-fill"></div>
+            </div>
+
+        </div>
+        <hr class="divider">
+        <div class="container">
+            <a  class="custom-buttonST">
+                <span class="succes_tsk">Виконані завдання</span> <span id="total-tasks" class="succes_number">0</span>
+            </a>
+            <hr class="divider_pointer">
+            <a  class="custom-buttonST">
+                <span class="failed_tsk">Провалені завдання</span> <span id="total-tasks" class="failed_number">0</span>
+            </a>
+            <hr class="divider_pointer">
+            <a  class="custom-buttonST">
+                <span class="command_tsk">Командні завдання</span> <span id="total-tasks" class="command_number">0</span>
+            </a>
+        </div>
+        <div class="divider">
+            <text class="text">Досягнення</text>
+        </div>
+        <div class="container_achiev">
+            <a class="text">Початок великого!</a>
+                <hr class="divider_pointer">
+            <a class="discribe">Попробуйте забрати свій приз зверху!(Натисни на кубок)</a>
+
+            <div class="container_xp">
+                <div id="counter">0/1</div>
+                <div id="right-content">10xp</div>
+            </div>
+         
+        </div>
+
+    </section>
+        <script>
+            let experience = 0;
+            const maxExperience = 100;
+
+            document.addEventListener("DOMContentLoaded", function () {
+                updateExperienceBar();
+            });
+
+            function gainExperience() {
+                experience += 10;
+                if (experience >= maxExperience) {
+                    experience = maxExperience;
+                    alert("Ви досягли максимального досвіду!");
+                }
+                updateExperienceBar();
+            }
+
+            function updateExperienceBar() {
+                const experienceFill = document.getElementById("experience-fill");
+                const currentExperience = document.getElementById("current-experience");
+                const maxExperienceText = document.getElementById("max-experience");
+
+                const fillPercentage = (experience / maxExperience) * 100;
+                experienceFill.style.width = `${fillPercentage}%`;
+                currentExperience.textContent = experience;
+                maxExperienceText.textContent = maxExperience;
+            }
+            const button = document.getElementById('clickButton');
+            const counter = document.getElementById('counter');
+
+            let clickCount = 0;
+
+            button.addEventListener('click', () => {
+                if (clickCount === 0) {
+                    clickCount++;
+                    counter.textContent = `${clickCount}/1`;
+
+                    
+                    button.disabled = true;
+                }
+            });
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+
+                // Check saved theme on page load
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                }
+
+                // Toggle theme on button click
+                toggleThemeBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-theme');
+
+                    // Save the chosen theme to local storage
+                    if (document.body.classList.contains('dark-theme')) {
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        localStorage.removeItem('theme');
+                    }
+                });
+            });
+
+
+        </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        setInterval(function(){
+       const clock = document.querySelector(".display");
+       let time = new Date();
+       time.setHours(time.getHours() ); 
+       let sec = time.getSeconds();
+       let min = time.getMinutes();
+       let hr = time.getHours();
+       let day = 'вечора';
+       if(hr >= 12){
+         day = 'дня';
+         hr = hr - 12;
+       }
+       if(hr == 0){
+         hr = 12;
+       }
+       if(sec < 10){
+         sec = '0' + sec;
+       }
+       if(min < 10){
+         min = '0' + min;
+       }
+       if(hr < 10){
+         hr = '0' + hr;
+       }
+       clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+     }, 1000); // Оновлюємо кожну секунду
+
+
+          async function fetchUserInfo() {
+              const userId = document.getElementById('userId').value;
+              try {
+                  const response = await fetch(`http://localhost:3000/user/${userId}`);
+                  if (!response.ok) {
+                      throw new Error('User not found');
+                  }
+                  const user = await response.json();
+                  document.getElementById('userName').textContent = user.name;
+                  document.getElementById('userPhone').textContent = user.phone;
+                  document.getElementById('userIdDisplay').textContent = user.id;
+              } catch (error) {
+                  console.error('Error fetching user info:', error);
+              }
+          }
+
+
+
+
+
+          
+       </script>
+
+</body>
+
+</html> 

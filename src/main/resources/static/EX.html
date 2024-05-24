@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styleEx.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="name">Список справ</div>
+    <div class="ava_cont">
+        <div class="ava_lef">
+            
+    <div class="display">
+    </div>
+      
+    </div>
+        <div class="ava_rig">
+            <a href="home.html">
+                <img src="assets/icons/Task-List-PNG-Clipart.png" alt="" class="ava-home">
+            </a>
+            <a href="home.html">
+                <img src="assets/icons/email-and-mail-icon-black-free-png.webp" alt="" class="mail">
+            </a>
+                <a href="Profile.html">
+                    <img src="assets/icons/149071.png" alt="" class="ava">
+             </a>
+        </div>
+    </div>
+    </header>
+<section class="ex">
+    <div class="button">
+        <input type="text" id="title" name="title" value="Назва/">
+        <hr>
+        <textarea id="content" name="content">Зміст</textarea>
+      </div>
+      
+
+      <div class="button-container">
+        <span class="button-text">Доступні шаблони</span>
+        
+            <img src="assets/icons/d16b751cb7a4cb5d1e5bbd78cc4e1f2481b9ee4378a448a01fbe7b2cd4de3157_100.webp" alt="" class="g-but" />
+        
+    </div>
+    
+
+    <div class="container">
+        <div class="box-t">
+            <label for="datetime">Дата/Час</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+            
+        </div>
+        <div class="box">
+            <label for="priority">Пріор.</label>
+            <input type="number" id="priority" name="priority" min="1" max="5">
+            <img src="assets/icons/Power-bi-logo.jpg" alt="">
+            <label for="rating">Оцінка</label>
+            <input type="number" id="rating" name="rating" min="1" max="5">
+            <img src="assets/icons/1.jpg" alt="">
+        </div>
+    </div>
+    
+
+
+    <div class="button_swich">
+        <span>Повторювання</span>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+    </div>
+    
+    <button class="custom-button">
+        Поділитись <span class="arrow">➤</span>
+    </button>
+    
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script>
+        setInterval(function(){
+       const clock = document.querySelector(".display");
+       let time = new Date();
+       time.setHours(time.getHours() ); 
+       let sec = time.getSeconds();
+       let min = time.getMinutes();
+       let hr = time.getHours();
+       let day = 'вечора';
+       if(hr >= 12){
+         day = 'дня';
+         hr = hr - 12;
+       }
+       if(hr == 0){
+         hr = 12;
+       }
+       if(sec < 10){
+         sec = '0' + sec;
+       }
+       if(min < 10){
+         min = '0' + min;
+       }
+       if(hr < 10){
+         hr = '0' + hr;
+       }
+       clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+     }, 1000); // Оновлюємо кожну секунду
+
+       document.addEventListener('DOMContentLoaded', () => {
+              const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+
+              // Check saved theme on page load
+              const savedTheme = localStorage.getItem('theme');
+              if (savedTheme === 'dark') {
+                  document.body.classList.add('dark-theme');
+              }
+
+              // Toggle theme on button click
+              toggleThemeBtn.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-theme');
+
+                  // Save the chosen theme to local storage
+                  if (document.body.classList.contains('dark-theme')) {
+                      localStorage.setItem('theme', 'dark');
+                  } else {
+                      localStorage.removeItem('theme');
+                  }
+              });
+          });
+
+     
+       </script>
+
+</body>
+
+</html> 

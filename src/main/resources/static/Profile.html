@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/styleProfile.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="name">Список справ</div>
+    <div class="ava_cont">
+        <div class="ava_lef">
+            
+    <div class="display">
+    </div>
+      
+    </div>
+        <div class="ava_rig">
+            <a href="home.html">
+                <img src="assets/icons/Task-List-PNG-Clipart.png" alt="" class="ava-home">
+            </a>
+            <a href="home.html">
+                <img src="assets/icons/email-and-mail-icon-black-free-png.webp" alt="" class="mail">
+            </a>
+                <a href="Profile.html">
+                    <img src="assets/icons/149071.png" alt="" class="ava">
+             </a>
+        </div>
+    </div>
+    </header>
+    <div class="ex" id="themeContainer">
+        <div class="container_av">
+            <a id ="toggleThemeBtn" class="light-black-them"><img clas src="assets/icons/Them.png" alt="" class="icons"></a>
+            <div class="avatar_profile">
+                <img clas src="assets/icons/149071.png" alt="" class="ava_img">
+            </div>
+        </div>
+        <div id="userInfo" class="user-info">
+            <label>Name: <span id="userName">Den </span>ID: <span id="userIdDisplay">121</span></label>
+            <label>Phone: <span id="userPhone">+380220234787</span></label>
+
+        </div>
+        <a href="" class="custom-button">
+           
+                Друзі <img src="assets/icons/Friends.png" alt="" class="icons">
+            
+        </a>
+        <a href="" class="custom-button">
+            
+                Настройки<img src="assets/icons/Settings.png" alt="" class="icons">
+           
+        </a>
+        <a href="" class="custom-button">
+            
+                Вигляд <img src="assets/icons/view.png" alt="" class="icons">
+           
+        </a>
+        <a href="Static.html" class="custom-button">
+           
+                Статистика <img src="assets/icons/Static.png" alt="" class="icons">
+          
+        </a>
+
+    </div>
+
+
+
+      <script>
+        setInterval(function(){
+       const clock = document.querySelector(".display");
+       let time = new Date();
+       time.setHours(time.getHours() ); 
+       let sec = time.getSeconds();
+       let min = time.getMinutes();
+       let hr = time.getHours();
+       let day = 'вечора';
+       if(hr >= 12){
+         day = 'дня';
+         hr = hr - 12;
+       }
+       if(hr == 0){
+         hr = 12;
+       }
+       if(sec < 10){
+         sec = '0' + sec;
+       }
+       if(min < 10){
+         min = '0' + min;
+       }
+       if(hr < 10){
+         hr = '0' + hr;
+       }
+       clock.textContent = hr + ':' + min + ':' + sec + " " + day;
+        }, 1000); // Оновлюємо кожну секунду
+
+          async function fetchUserInfo() {
+              const userId = document.getElementById('userId').value;
+              try {
+                  const response = await fetch(`http://localhost:3000/user/${userId}`);
+                  if (!response.ok) {
+                      throw new Error('User not found');
+                  }
+                  const user = await response.json();
+                  document.getElementById('userName').textContent = user.name;
+                  document.getElementById('userPhone').textContent = user.phone;
+                  document.getElementById('userIdDisplay').textContent = user.id;
+              } catch (error) {
+                  console.error('Error fetching user info:', error);
+              }
+          }
+
+
+
+
+          document.addEventListener('DOMContentLoaded', () => {
+              const themeContainer = document.getElementById('themeContainer');
+              const toggleThemeBtn = document.getElementById('toggleThemeBtn');
+
+              // Check saved theme on page load
+              const savedTheme = localStorage.getItem('theme');
+              if (savedTheme === 'dark') {
+                  document.body.classList.add('dark-theme');
+              }
+
+              // Toggle theme on button click
+              toggleThemeBtn.addEventListener('click', () => {
+                  document.body.classList.toggle('dark-theme');
+
+                  // Save the chosen theme to local storage
+                  if (document.body.classList.contains('dark-theme')) {
+                      localStorage.setItem('theme', 'dark');
+                  } else {
+                      localStorage.removeItem('theme');
+                  }
+              });
+          });
+       </script>
+
+</body>
+
+</html> 
